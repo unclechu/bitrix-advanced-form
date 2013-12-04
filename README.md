@@ -96,22 +96,22 @@
 5. «Кому» = «#ADMIN_EMAIL#»;
 6. «Тема письма» = «Некто #VALUE_name# заполнил форму»;
 7. «Тело письма»:
-    &lt;h1&gt;#SITE_NAME#&lt;/h1&gt;
+        <h1>#SITE_NAME#</h1>
 
-    &lt;h2&gt;Запись на приём к специалисту&lt;/h2&gt;
+        <h2>Запись на приём к специалисту</h2>
 
-    &lt;dl&gt;
-        &lt;dt&gt;#TITLE_name#&lt;/dt&gt;
-        &lt;dd&gt;#VALUE_name#&lt;/dd&gt;
+        <dl>
+            <dt>#TITLE_name#</dt>
+            <dd>#VALUE_name#</dd>
 
-        &lt;dt&gt;#TITLE_email#&lt;/dt&gt;
-        &lt;dd&gt;#VALUE_email#&lt;/dd&gt;
+            <dt>#TITLE_email#</dt>
+            <dd>#VALUE_email#</dd>
 
-        &lt;dt&gt;#TITLE_message#&lt;/dt&gt;
-        &lt;dd&gt;#VALUE_message#&lt;/dd&gt;
-    &lt;/dl&gt;
+            <dt>#TITLE_message#</dt>
+            <dd>#VALUE_message#</dd>
+        </dl>
 
-    &lt;p&gt;Это письмо отправлено автоматически, отвечать на него не нужно. С вопросами обращаться по этому адресу: #ADMIN_EMAIL#&lt;/p&gt;
+        <p>Это письмо отправлено автоматически, отвечать на него не нужно. С вопросами обращаться по этому адресу: #ADMIN_EMAIL#</p>
 
 Настройка компонента
 ====================
