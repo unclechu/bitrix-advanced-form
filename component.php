@@ -3,11 +3,12 @@
  * Advanced Form
  * Bitrix component
  * 
- * Version: 0.1
  * License: GPLv3
  * Author: Viacheslav Lotsmanov (unclechu)
  * Contact: lotsmanov89@gmail.com
  */
+
+CModule::IncludeModule('iblock');
 
 // form identificator
 $arResult['FORM_UID'] = substr(md5($APPLICATION->GetCurPage(0) . $arParams['FORM_SALT']), 0, 7);
@@ -59,7 +60,7 @@ $arResult['REPLACE_LIST'] = array(
        Form fields as #TITLE_%FIELD_NAME%# and #VALUE_%FIELD_VALUE%#
        Examples (remember: case sensitive):
        #TITLE_name# = Name, #VALUE_name# = John Smith,
-       #TITLE_email# = E-Mail, #VALUE_email# = johm@domain.org */
+       #TITLE_email# = E-Mail, #VALUE_email# = john@domain.org */
 );
 
 // messages arrays about success or errors
