@@ -3,7 +3,8 @@
 $arResult['ERROR_MESSAGES'] = null;
 $arResult['SUCCESS_MESSAGES'] = null;
 
-require_once dirname(__FILE__) .'/lang/'. LANGUAGE_ID .'/template.php';
+$MESS = array();
+require dirname(__FILE__) .'/lang/'. LANGUAGE_ID .'/template.php';
 
 function MyGetMessage($MESS, $msgCode, $replaceList=array()) {
     if ( ! array_key_exists($msgCode, $MESS)) return $msgCode;
