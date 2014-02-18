@@ -11,7 +11,8 @@
 CModule::IncludeModule('iblock');
 
 // form identificator
-$arResult['FORM_UID'] = substr(md5($APPLICATION->GetCurPage(0) . $arParams['FORM_SALT']), 0, 7);
+if (empty($arParams['FORM_SALT'])) $arParams['FORM_SALT'] = $APPLICATION->GetCurPage(0);
+$arResult['FORM_UID'] = substr(md5($arParams['FORM_SALT']), 0, 7);
 
 $arResult['POST_PATHNAME'] = $APPLICATION->GetCurPage(0) . '?post=Y';
 $arResult['SITE_URL'] = 'http://' . $_SERVER['SERVER_NAME'];
