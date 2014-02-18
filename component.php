@@ -197,7 +197,7 @@ if (array_key_exists('post', $_GET) && $_GET['post'] == 'Y'
     }
 
     if ($arResult['POST_ERROR'] === null) {
-        if ($arParams['HIDE_SUCCESS_FORM']) {
+        if ($arParams['HIDE_SUCCESS_FORM'] && $arParams['HIDE_SUCCESS_FORM'] == 'Y') {
             $arResult['FORM_HIDE'] = true;
         }
 
