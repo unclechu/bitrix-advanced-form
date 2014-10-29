@@ -6,13 +6,15 @@ $arResult['SUCCESS_MESSAGES'] = null;
 $MESS = array();
 require dirname(__FILE__) .'/lang/'. LANGUAGE_ID .'/template.php';
 
-function MyGetMessage($MESS, $msgCode, $replaceList=array()) {
-    if ( ! array_key_exists($msgCode, $MESS)) return $msgCode;
-    $result = $MESS[$msgCode];
-    foreach ($replaceList as $key=>$val) {
-        $result = str_replace($key, $val, $result);
-    }
-    return $result;
+if (!function_exists('MyGetMessage')) {
+	function MyGetMessage($MESS, $msgCode, $replaceList=array()) {
+		if ( ! array_key_exists($msgCode, $MESS)) return $msgCode;
+		$result = $MESS[$msgCode];
+		foreach ($replaceList as $key=>$val) {
+			$result = str_replace($key, $val, $result);
+		}
+		return $result;
+	}
 }
 
 if (is_array($arResult['POST_ERROR'])) {

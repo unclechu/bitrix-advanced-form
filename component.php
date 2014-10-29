@@ -2,7 +2,7 @@
 /**
  * Advanced Form
  * Bitrix component
- * 
+ *
  * License: GPLv3
  * Author: Viacheslav Lotsmanov (unclechu)
  * Contact: lotsmanov89@gmail.com
@@ -53,7 +53,7 @@ $arResult['REPLACE_LIST'] = array(
     '#DOMAIN_NAME#' => $_SERVER['SERVER_NAME'],
 
     /* #SITE_NAME# - from site settings by SITE_ID
-    
+
        Params:
        #EMAIL_FROM# #ADMIN_EMAIL#
        #HIDDEN_COPY_ADMIN# #HIDDEN_COPY_USER#
@@ -73,20 +73,24 @@ $arResult['FORM_HIDE'] = false;
 
 $arResult['FIELDS_LIST'] = getFieldsList($arResult, $arParams);
 
-function addErrorMsg($arResult, $arParams, $msg) {
-    if ($arResult['POST_ERROR'] === null) {
-        $arResult['POST_ERROR'] = array();
-    }
-    $arResult['POST_ERROR'][] = $msg;
-    return $arResult['POST_ERROR'];
+if (!function_exists('addErrorMsg')) {
+	function addErrorMsg($arResult, $arParams, $msg) {
+		if ($arResult['POST_ERROR'] === null) {
+			$arResult['POST_ERROR'] = array();
+		}
+		$arResult['POST_ERROR'][] = $msg;
+		return $arResult['POST_ERROR'];
+	}
 }
 
-function addSuccessMsg($arResult, $arParams, $msg) {
-    if ($arResult['POST_SUCCESS'] === null) {
-        $arResult['POST_SUCCESS'] = array();
-    }
-    $arResult['POST_SUCCESS'][] = $msg;
-    return $arResult['POST_SUCCESS'];
+if (!function_exists('addSuccessMsg')) {
+	function addSuccessMsg($arResult, $arParams, $msg) {
+		if ($arResult['POST_SUCCESS'] === null) {
+			$arResult['POST_SUCCESS'] = array();
+		}
+		$arResult['POST_SUCCESS'][] = $msg;
+		return $arResult['POST_SUCCESS'];
+	}
 }
 
 // posting handler
@@ -116,7 +120,7 @@ if (array_key_exists('post', $_GET) && $_GET['post'] == 'Y'
                 )
             );
         }
-    }    
+    }
     if ($arParams['USE_CAPTCHA'] == 'Y') {
         if (empty($arResult['POST_DATA'][$arResult['CAPTCHA']['HIDDEN_FIELD_NAME']])
         || empty($arResult['POST_DATA'][$arResult['CAPTCHA']['INPUT_FIELD_NAME']])) {
